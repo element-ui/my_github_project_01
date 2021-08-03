@@ -5,6 +5,8 @@ import Login from '../../components/Login.vue'
 import '../assets/css/global.css'
 // 导入Home
 import Home from '../../components/Home.vue'
+import Welcome from '../../components/Welcome'
+import Users from '../../components/user/Users'
 
 Vue.use(VueRouter)
 
@@ -12,7 +14,10 @@ const router = new VueRouter({
   routes: [
     { path: '/', redirect: '/login' },
     { path: '/login', component: Login },
-    { path: '/home', component: Home }
+    { path: '/home', component: Home,
+      redirect:'/Welcome',
+      children:[{ path:'/Welcome', component:Welcome},{ path:'/users',component:Users}]
+    },
     ]
 })
 

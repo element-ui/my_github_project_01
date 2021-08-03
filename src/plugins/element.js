@@ -16,9 +16,18 @@ import {Message,
   MenuItem,
   inputNumber,
   Row,
-  MessageBox
+  MessageBox,
   // Col,
   // Avatar
+  Breadcrumb,
+  BreadcrumbItem,
+  Card,
+  Col,
+  Table,
+  TableColumn,
+  Switch,
+  Tooltip,
+  Pagination
 } from 'element-ui'
 //Message跟其他的不一样，他要暴露在全局中 $（属性名）任意取
 
@@ -38,6 +47,15 @@ Vue.use(Submenu)
 Vue.use(MenuItem)
 Vue.use(inputNumber)
 Vue.use(Row)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Card)
+Vue.use(Col)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Switch)
+Vue.use(Tooltip)
+Vue.use(Pagination)
 // Vue.use(Col)
 // Vue.use(Avatar)
 // Vue.use(MessageBox )
