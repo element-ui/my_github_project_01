@@ -27,12 +27,14 @@ import {Message,
   TableColumn,
   Switch,
   Tooltip,
-  Pagination
+  Pagination,
+  Dialog
 } from 'element-ui'
 //Message跟其他的不一样，他要暴露在全局中 $（属性名）任意取
 
 Vue.prototype.$message = Message
 Vue.prototype.$alert = MessageBox
+Vue.prototype.$confirm = MessageBox.confirm
 Vue.use(Button)
 Vue.use(Form)
 Vue.use(FormItem)
@@ -56,6 +58,7 @@ Vue.use(TableColumn)
 Vue.use(Switch)
 Vue.use(Tooltip)
 Vue.use(Pagination)
+Vue.use(Dialog)
 // Vue.use(Col)
 // Vue.use(Avatar)
 // Vue.use(MessageBox )
