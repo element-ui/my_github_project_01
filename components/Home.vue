@@ -132,6 +132,7 @@ export default {
   color: white;
   text-align: center;
   letter-spacing: 0.2em;
+  //添加鼠标选择状态
   cursor:pointer;
 }
 .el-main{
