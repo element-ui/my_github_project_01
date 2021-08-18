@@ -1,25 +1,37 @@
 <template>
   <div class="login_container">
     <div class="login_box" v-if="flag">
-      <!--      v-if="showModal"-->
       <!--登录区域-->
       <div class="avatar_box">
         <img src="../src/assets/logo.jpg" alt="">
       </div>
+
       <!--注册-->
       <div class="el-icon-user-solid" @click="div_loginout"></div>
+
       <!--表单区域-->
-      <el-form :model="loginForm" ref="loginFormRef" :rules="loginFormRules" label-width="0px"
+      <el-form :model="loginForm"
+               ref="loginFormRef"
+               :rules="loginFormRules"
+               label-width="0px"
                class="login_form">
+
         <!--用户名-->
         <el-form-item prop="username">
-          <el-input v-model="loginForm.username" placeholder="admin" prefix-icon="iconfont icon-user"></el-input>
+          <el-input v-model="loginForm.username"
+                    placeholder="admin"
+                    prefix-icon="iconfont icon-user"></el-input>
         </el-form-item>
+
         <!--密码-->
         <el-form-item prop="password">
-          <el-input v-model="loginForm.password" prop="name" placeholder="password" prefix-icon="iconfont icon-3702mima"
+          <el-input v-model="loginForm.password"
+                    prop="name"
+                    placeholder="password"
+                    prefix-icon="iconfont icon-3702mima"
                     type="password"></el-input>
         </el-form-item>
+
         <!--按钮区域-->
         <el-form-item class="btns">
           <el-button type="primary" @click="login">登录</el-button>
@@ -29,7 +41,7 @@
     </div>
 
     <div class="login_box" v-if="!flag">
-      <img src="../src/assets/src=http___www.sznews.com_news_pic_2020-03_29_b36b9e97-d538-4b7a-af48-b58dc20f0981.jpg&refer=http___www.sznews.jpg" alt="" class="erWeiMa" @click="div_loginout">
+      <img src="../src/assets/src=http___www.sznews.com_news_pic_2020-03_29_b36b9e97-d538-4b7a-af48-b58dc20f0981.jpg&refer=http___www.sznews.jpg" alt="深爱你" class="erWeiMa" @click="div_loginout">
     </div>
   </div>
 </template>
@@ -38,6 +50,7 @@
 export default {
   data () {
     return {
+
       // 这是登录表单的数据绑定
       flag:true,
       loginForm: {
@@ -46,6 +59,7 @@ export default {
         // showModal:true
 
       },
+
       // 这是表单的验证规则对象
       loginFormRules: {
         // 验证用户名是否合法
@@ -62,6 +76,7 @@ export default {
             trigger: 'blur'
           }
         ],
+
         // 验证密码是否合法
         password: [
           {
@@ -80,11 +95,13 @@ export default {
     }
   },
   methods: {
+
     // 获取整个表单的数据，从而重置表单
     resetLoginForm () {
       this.$refs.loginFormRef.resetFields()
       this.$message.success('重置成功！')
     },
+
     // 获取整个表单的数据
     login: function () {
       // 判断账号和密码是否合法

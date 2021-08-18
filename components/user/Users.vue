@@ -1,16 +1,15 @@
 <template>
   <div>
-  <!--  面包屑导航区域-->
+    <!--  面包屑导航区域-->
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>用户管理</el-breadcrumb-item>
       <el-breadcrumb-item>用户列表</el-breadcrumb-item>
     </el-breadcrumb>
 
-  <!--  卡片试图区域-->
+    <!--  卡片试图区域-->
     <el-card>
-
-<!--      搜索与添加区域-->
+      <!--搜索与添加区域-->
       <el-row :gutter="20">
         <el-col :span="10">
           <div>
@@ -41,13 +40,25 @@
           <!--作用域插槽-->
           <template slot-scope="scope">
             <!--修改按钮-->
-            <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(scope.row.id)"></el-button>
+            <el-button type="primary"
+                       icon="el-icon-edit"
+                       size="mini"
+                       @click="showEditDialog(scope.row.id)"></el-button>
             <!--删除按钮-->
-            <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeUser(scope.row.id)"></el-button>
+            <el-button type="danger"
+                       icon="el-icon-delete"
+                       size="mini"
+                       @click="removeUser(scope.row.id)"></el-button>
             <!--提示文字-->
-            <el-tooltip effect="dark" content="分配角色" placement="top" :enterable="false">
+            <el-tooltip effect="dark"
+                        content="分配角色"
+                        placement="top"
+                        :enterable="false">
               <!--分配角色按钮-->
-              <el-button type="warning" icon="el-icon-setting" size="mini" @click="addUserSetting(scope.row)"></el-button>
+              <el-button type="warning"
+                         icon="el-icon-setting"
+                         size="mini"
+                         @click="addUserSetting(scope.row)"></el-button>
             </el-tooltip>
           </template>
         </el-table-column>
@@ -93,7 +104,7 @@
 
 <!--      修改用户信息的对话框-->
       <el-dialog title="修改用户信息" :visible.sync="editDialogVisible" width="50%" @close="editClose">
-        <el-form :model="editForm" :rules="editFormRules" ref="editFormref" label-width="70px">
+        <el-form :model="editForm" label-width="100px">
           <!--修改用户名-->
           <el-form-item label="用户名">
             <el-input v-model="editForm.username" disabled="disabled"></el-input>

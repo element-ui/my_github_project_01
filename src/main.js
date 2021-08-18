@@ -5,6 +5,8 @@ import './plugins/element.js'
 // 导入全局图标
 import "./assets/fonts/iconfont.css"
 import '../js/jquery-3.6.0.min'
+//导入表格
+import Tree from 'vue-table-with-tree-grid'
 
 Vue.config.productionTip = false
 
@@ -21,6 +23,7 @@ axios.interceptors.request.use(config=>{
 })
 // 配置URL的根路径
 axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
+Vue.component('tree-table',Tree)
 
 new Vue({
   router,

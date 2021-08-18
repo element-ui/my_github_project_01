@@ -32,7 +32,8 @@ import {Message,
   Tag,
   Tree,
   Select,
-  Option
+  Option,
+  Cascader
 } from 'element-ui'
 //Message跟其他的不一样，他要暴露在全局中 $（属性名）任意取
 
@@ -67,6 +68,7 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Cascader)
 // Vue.use(Col)
 // Vue.use(Avatar)
 // Vue.use(MessageBox )

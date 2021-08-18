@@ -36,7 +36,10 @@
                  </el-col>
 
                  <el-col :span="12">
-                       <el-tag type="warning" closable v-for="(item3,i3) in item2.children" :key="item3.id" :class="[i3 === 0 ? '' : 'bdtop']" @close="removeTag(scope.row,item3.id)">{{item3.authName}}</el-tag>
+                       <el-tag type="warning"
+                               closable v-for="(item3,i3) in item2.children"
+                               :key="item3.id" :class="[i3 === 0 ? '' : 'bdtop']"
+                               @close="removeTag(scope.row,item3.id)">{{item3.authName}}</el-tag>
                  </el-col>
 
                </el-row>
@@ -66,7 +69,13 @@
 <!--    node-key	每个树节点用来作为唯一标识的属性，整棵树应该是唯一的-->
 <!--    default-expand-all	是否默认展开所有节点	boolean-->
 <!--    default-expanded-keys	默认展开的节点的 key 的数组	array-->
-    <el-tree :data="settingList" :props="treePropos" show-checkbox node-key="id" :default-expand-all="true" :default-checked-keys="defaultKey" ref="treeRef"></el-tree>
+    <el-tree :data="settingList"
+             :props="treePropos"
+             show-checkbox
+             node-key="id"
+             :default-expand-all="true"
+             :default-checked-keys="defaultKey"
+             ref="treeRef"></el-tree>
     <span slot="footer" class="dialog-footer">
     <el-button @click="addRloesVisible = false">取 消</el-button>
     <el-button type="primary" @click="addSetting">确 定</el-button>
@@ -90,6 +99,7 @@ data(){
       label:'authName',
       children:'children'
     },
+
     //默认选择的节点ID值数组
     defaultKey:[],
     //当前即将分配权限的角色id
@@ -108,6 +118,7 @@ data(){
     this.rolesList = res.data
     console.log(res)
   },
+
     //根据ID删除对应的用户信息
     async removeTag(roles,rightID){
       //弹框询问用户是否删除数据
@@ -130,6 +141,7 @@ data(){
       this.$message.success('删除成功!')
       roles.children = res.data
   },
+
     //展示分配权限的对话框
     async setRloeSetting(role){
     this.roleID = role.id
@@ -147,6 +159,7 @@ data(){
       //显示对话框
       this.addRloesVisible = true
     },
+
     //通过递归的形式，获取角色下所有三级权限的ID，并保存到defaultKey 数组中
     getDefaultKeys(node,arr){
     //如果当前 node 节点不包括 children 属性，则是三级节点
@@ -156,10 +169,12 @@ data(){
       //递归调用
       node.children.forEach(item => this.getDefaultKeys(item, arr))
     },
+
     //监听分配权限对话框的关闭事件
     addRolesClosed(){
     this.defaultKey = []
     },
+
     //角色授权
     async addSetting(){
     const arrKeys = [
